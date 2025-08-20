@@ -1,1 +1,18 @@
 # Defines services and containers for local development and testing
+version: "3.9"
+services:
+  db:
+    image: postgres:16
+    container_name: CIMS_DB
+    environment:
+      POSTGRES_USER: CIMS_DB
+      POSTGRES_PASSWORD: CIMS_DB
+      POSTGRES_DB: CIMS
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
+
