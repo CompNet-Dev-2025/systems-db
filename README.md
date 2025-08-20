@@ -14,4 +14,4 @@ Contains schema, seed data, and scripts for the main system database.
 
 `psql --host 127.0.0.1 -p 5432 --username username databasename -f init.sql`
 
-Credentials are found in the docker-compose file.
+Credentials are found in the env file.
