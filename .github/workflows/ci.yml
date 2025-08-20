@@ -1,2 +1,26 @@
 # Placeholder CI workflow file – to be populated with actual jobs later
+name: Dummy Action
+
+on:
+  workflow_dispatch:   # allows manual trigger
+  push:                # also runs on pushes
+    - branches:
+        - '!main'
+
+jobs:
+  dummy-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print hello
+        run: echo "Hello from dummy action 👋"
+
+      - name: Wait a bit
+        run: sleep 5
+
+      - name: Print done
+        run: echo "✅ Dummy job finished!"
 
