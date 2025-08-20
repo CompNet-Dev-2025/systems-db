@@ -1,13 +1,17 @@
-# systems-db
-Contains schema, seed data, and scripts for the main system database.
-
-## How to use for testing
-
-1. git pull the repo to ensure you have the latest code
-2. Install docker (if not already installed)
-3. `docker compose up -d`
-4. Access the database by whatever postgres compatible client you see fit.
-
-## If running only on localhost
-
-psql --host 127.0.0.1 -p 5432 --username CIMS_DB CIMS -f init.sql
+# Defines services and containers for local development and testing
+version: "3.9"
+services:
+  db:
+    image: postgres:16
+    container_name: CIMS_DB
+    environment:
+      POSTGRES_USER: CIMS_DB
+      POSTGRES_PASSWORD: CIMS_DB
+      POSTGRES_DB: CIMS
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
