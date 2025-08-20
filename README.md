@@ -3,7 +3,7 @@ Contains schema, seed data, and scripts for the main system database.
 
 ## How to use for testing
 
-1. git pull the repo to ensure you have the latest code
+1. git clone the repo, or git pull if already present
 2. Install docker (if not already installed)
 3. Copy .env.example to .env
 4. Modify credentials in .env to suit your needs
