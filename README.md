@@ -11,3 +11,5 @@ Contains schema, seed data, and scripts for the main system database.
 ## If running only on localhost
 
 psql --host 127.0.0.1 -p 5432 --username CIMS_DB CIMS -f init.sql
+
+Credentials are found in the docker-compose file.
