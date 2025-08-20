@@ -5,9 +5,9 @@ services:
     image: postgres:16
     container_name: CIMS_DB
     environment:
-      POSTGRES_USER: CIMS_DB
-      POSTGRES_PASSWORD: CIMS_DB
-      POSTGRES_DB: CIMS
+      FOO: BAR
+    env_file:
+      - .env
     ports:
       - "5432:5432"
     volumes:
