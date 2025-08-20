@@ -4,6 +4,8 @@ name: Dummy Action
 on:
   workflow_dispatch:   # allows manual trigger
   push:                # also runs on pushes
+    - branches:
+        - '!main'
 
 jobs:
   dummy-job:
